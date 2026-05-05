@@ -90,7 +90,7 @@ export function TeamSection() {
                       href={member.calendly} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-3 bg-white/[0.03] hover:bg-white text-white/60 hover:text-black px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-widest transition-all border border-white/10 hover:border-white shadow-xl"
+                      className="inline-flex items-center gap-3 bg-[#daff00] hover:bg-white text-black px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-widest transition-all border border-[#daff00] hover:border-white shadow-[0_0_30px_rgba(218,255,0,0.2)]"
                     >
                       <SiCalendly className="w-4 h-4" />
                       Agendar con {member.stageName}
