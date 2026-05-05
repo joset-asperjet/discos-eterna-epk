@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Phone, CreditCard, FileText, Code2, RefreshCw, Rocket, Plus, ChevronDown, Sparkles } from "lucide-react"
 
 const steps = [
