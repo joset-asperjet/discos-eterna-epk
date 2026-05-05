@@ -14,8 +14,12 @@ const reviews = [
 ]
 
 export function ReviewsSection() {
-  // Combine artists with reviews
-  const artistReviews = artists.map((artist, i) => ({
+  // Filter out founders and combine artists with reviews
+  const filteredArtists = artists.filter(artist => 
+    artist.name !== "Joset" && artist.name !== "Juanitostate"
+  )
+  
+  const artistReviews = filteredArtists.map((artist, i) => ({
     ...artist,
     text: reviews[i % reviews.length]
   }))
