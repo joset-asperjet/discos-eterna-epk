@@ -8,7 +8,7 @@ const team = [
   {
     name: "Juan Trujillo",
     stageName: "Juanito State",
-    role: "Business Development Rep",
+    role: "Business Development Representative",
     image: "/images/info-section/juanito-state.webp",
     socials: {
       instagram: "https://www.instagram.com/juanitostate/",
