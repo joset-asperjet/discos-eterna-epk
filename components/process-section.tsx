@@ -50,6 +50,15 @@ const steps = [
 
 export function ProcessSection() {
   const [showCombo, setShowCombo] = useState(false)
+  const [randomCalendly, setRandomCalendly] = useState("https://calendly.com/juanitostate/")
+
+  useEffect(() => {
+    const links = [
+      "https://calendly.com/juanitostate/",
+      "https://calendly.com/joset-eterna"
+    ]
+    setRandomCalendly(links[Math.floor(Math.random() * links.length)])
+  }, [])
 
   return (
     <section id="proceso" className="py-24 lg:py-32 px-6 lg:px-8 bg-black">
@@ -121,7 +130,7 @@ export function ProcessSection() {
               Inicia hoy mismo y recibe tu primera propuesta en menos de 10 días.
             </p>
             <a 
-              href="https://wa.me/573107783559?text=Hola! Quiero contratar un plan de EPK Web." 
+              href={randomCalendly} 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-[#daff00] text-black px-12 py-5 text-xs font-black rounded-full uppercase tracking-[0.2em] hover:scale-105 active:scale-95 transition-all shadow-[0_0_50px_rgba(218,255,0,0.3)] cursor-pointer"

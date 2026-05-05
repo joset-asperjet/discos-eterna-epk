@@ -2,7 +2,6 @@
 
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Play, Star } from "lucide-react"
-import Link from "next/link"
 import Image from "next/image"
 import { useState, useEffect, useRef } from "react"
 
@@ -327,8 +326,17 @@ export function HeroSection() {
   const [activeTab, setActiveTab] = useState("Galería")
   const [riderFilter, setRiderFilter] = useState("Todo")
   const [isAuto, setIsAuto] = useState(true)
+  const [randomCalendly, setRandomCalendly] = useState("https://calendly.com/juanitostate/")
 
   const tabs = ["Rider", "Biografía", "Música", "Galería"]
+
+  useEffect(() => {
+    const links = [
+      "https://calendly.com/juanitostate/",
+      "https://calendly.com/joset-eterna"
+    ]
+    setRandomCalendly(links[Math.floor(Math.random() * links.length)])
+  }, [])
 
   useEffect(() => {
     if (!isAuto) return
@@ -399,8 +407,10 @@ export function HeroSection() {
 
             {/* Mobile ONLY CTA Button (Above Dashboard) */}
             <div className="md:hidden mb-8">
-              <Link
-                href="#planes"
+              <a
+                href={randomCalendly}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-[#daff00] text-black px-12 py-4 text-sm font-black group rounded-full transition-all duration-300 w-full uppercase tracking-widest shadow-[0_0_30px_rgba(218,255,0,0.3)] cursor-pointer"
               >
                 Agendar una llamada
@@ -409,7 +419,7 @@ export function HeroSection() {
                   alt=""
                   className="ml-3 h-4 w-4 brightness-0 group-hover:translate-x-1 transition-transform duration-300"
                 />
-              </Link>
+              </a>
             </div>
 
             {/* Interactive Dashboard Mockup (Mobile Only) */}
@@ -425,8 +435,10 @@ export function HeroSection() {
 
             {/* Desktop ONLY CTA Buttons */}
             <div className="hidden md:flex items-center gap-6">
-              <Link
-                href="#planes"
+              <a
+                href={randomCalendly}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-[#daff00] text-black px-16 py-4 text-sm font-black group rounded-full transition-all duration-300 w-full sm:w-auto min-w-[220px] uppercase tracking-widest shadow-[0_0_20px_rgba(218,255,0,0.15)] cursor-pointer"
               >
                 Agendar una llamada
@@ -435,7 +447,7 @@ export function HeroSection() {
                   alt=""
                   className="ml-3 h-4 w-4 brightness-0 group-hover:translate-x-1 transition-transform duration-300"
                 />
-              </Link>
+              </a>
 
               <a
                 href="https://juanitostate.info"
