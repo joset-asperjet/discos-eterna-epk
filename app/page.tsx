@@ -5,6 +5,7 @@ import { InteractivePreview } from "@/components/interactive-preview"
 import { PricingSection } from "@/components/pricing-section"
 import { ProcessSection } from "@/components/process-section"
 import { ReviewsSection } from "@/components/reviews-section"
+import { TeamSection } from "@/components/team-section"
 import { Footer } from "@/components/footer"
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <InteractivePreview />
       <PricingSection />
       <ProcessSection />
+      <TeamSection />
       <ReviewsSection />
       <Footer />
     </main>
