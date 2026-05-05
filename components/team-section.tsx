@@ -40,7 +40,7 @@ export function TeamSection() {
             Nuestro Team
           </div>
           <h2 className="text-4xl md:text-7xl font-black text-white uppercase tracking-tighter leading-[0.9]">
-            El equipo detrás <br /> <span className="text-[#daff00]">de tu éxito</span>
+            Conversa directo <br /> <span className="text-[#daff00]">con los fundadores</span>
           </h2>
         </div>
 
