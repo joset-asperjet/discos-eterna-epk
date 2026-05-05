@@ -84,14 +84,16 @@ export function TeamSection() {
                       </a>
                     </div>
 
+                    <div className="w-px h-8 bg-white/10 hidden sm:block" />
+
                     <a 
                       href={member.calendly} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-3 bg-white/10 hover:bg-[#daff00] text-white hover:text-black px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-widest transition-all border border-white/10 hover:border-[#daff00]"
+                      className="inline-flex items-center gap-3 bg-white/[0.03] hover:bg-white text-white/60 hover:text-black px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-widest transition-all border border-white/10 hover:border-white shadow-xl"
                     >
                       <SiCalendly className="w-4 h-4" />
-                      Hablar con {member.name.split(' ')[0]}
+                      Agendar con {member.stageName}
                     </a>
                   </div>
                 </div>
