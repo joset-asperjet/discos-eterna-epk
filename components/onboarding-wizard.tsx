@@ -496,7 +496,7 @@ export function OnboardingWizard() {
                        </div>
                        <div>
                          <p className="text-xs md:text-sm font-black uppercase tracking-widest mb-1">
-                           {formData.budget < 2200000 ? "Perfil: Hobbie Artist" : formData.budget < 3200000 ? "Perfil: Artista en Crecimiento" : "Perfil: Consultoría 360°"}
+                           {formData.budget < 2200000 ? "Perfil: Hobby Artist" : formData.budget < 3200000 ? "Perfil: Artista en Crecimiento" : "Perfil: Consultoría 360°"}
                          </p>
                          <p className="text-[10px] md:text-xs text-white/60 leading-relaxed italic">
                            {formData.budget < 2200000 

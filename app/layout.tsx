@@ -18,11 +18,11 @@ const caveat = Caveat({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://discoseterna.info'),
-  title: 'DISCOS ETERNA | Digital Presskit',
-  description: 'Un EPK todo en uno para tu proyecto artistico. Diseñado para que agencias y promotores conozcan tu propuesta de forma precisa y profesional.',
+  title: 'DISCOS ETERNA | EPK Web para DJs y Productores',
+  description: 'El press kit web para DJs y productores que quieren ser tomados en serio por agencias y sellos internacionales. Tu propio dominio, reproductor musical, rider técnico y multilenguaje. Desde $1.500.000 COP.',
   openGraph: {
-    title: 'DISCOS ETERNA | Digital Presskit',
-    description: 'Un EPK todo en uno para tu proyecto artistico. Diseñado para que agencias y promotores conozcan tu propuesta de forma precisa y profesional.',
+    title: 'DISCOS ETERNA | EPK Web para DJs y Productores',
+    description: 'El press kit web para DJs y productores que quieren ser tomados en serio por agencias y sellos internacionales.',
     url: 'https://discoseterna.info',
     siteName: 'Discos Eterna',
     images: [
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
         url: '/images/metainfo-picture.jpg',
         width: 1200,
         height: 630,
-        alt: 'Discos Eterna Digital Presskit',
+        alt: 'Discos Eterna EPK Web para DJs y Productores',
       }
     ],
     locale: 'es_CO',
@@ -38,8 +38,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'DISCOS ETERNA | Digital Presskit',
-    description: 'Un EPK todo en uno para tu proyecto artistico. Diseñado para que agencias y promotores conozcan tu propuesta de forma precisa y profesional.',
+    title: 'DISCOS ETERNA | EPK Web para DJs y Productores',
+    description: 'El press kit web para DJs y productores que quieren ser tomados en serio por agencias y sellos internacionales.',
     images: ['/images/metainfo-picture.jpg'],
   },
   icons: {

@@ -60,36 +60,14 @@ export const artists = [
   },
 ]
 
-const pdfFeatures = [
-  { main: "Documento estático" },
-  { main: "Hay que rediseñar y reenviar" },
-  { main: "Un idioma" },
-  { main: "Links externos de audio" },
-  { main: "Texto plano" },
-  { main: "Se ve mal en celular" },
-]
-
-const webFeatures = [
-  { 
-    main: "Más rápido que un PDF", 
-    sub: "Se ejecuta desde el navegador igual que una aplicación web" 
-  },
-  { 
-    main: "Autogestionable",
-    sub: "Panel administrativo para actualizar, agregar y eliminar contenido"
-  },
-  { 
-    main: "Multilenguaje",
-    sub: "Puedes cambiar el idioma con solo un clic"
-  },
-  { 
-    main: "Reproductor musical integrado",
-    sub: "Reproduce la música directamente desde el EPK sin abandonar la aplicación"
-  },
-  { 
-    main: "Dominio personalizado",
-    sub: "Ejemplo: juanitostate.info"
-  },
+const comparisonRows = [
+  { label: "Diseño profesional único", pdf: false, linktree: "partial", linktreeNote: "Genérico", epk: true, epkNote: "Custom para tu proyecto" },
+  { label: "Reproductor musical integrado", pdf: false, linktree: false, epk: true },
+  { label: "Multilenguaje (cambio en vivo)", pdf: false, linktree: false, epk: true },
+  { label: "Dominio propio personalizado", pdf: false, linktree: "partial", linktreeNote: "Pago aparte", epk: true, epkNote: "Incluido el 1er año" },
+  { label: "Mapas de calor (analítica)", pdf: false, linktree: false, epk: true },
+  { label: "Rider técnico visual organizado", pdf: false, linktree: false, epk: true },
+  { label: "Te diferencia del resto", pdf: false, linktree: false, epk: true },
 ]
 
 export function ComparisonSection() {
@@ -208,54 +186,78 @@ export function ComparisonSection() {
         {/* Section Title */}
         <div className="text-center mb-16 lg:mb-20">
           <h2 className="text-3xl md:text-5xl lg:text-7xl font-black uppercase tracking-tight leading-[0.9] text-white">
-            EPK Web <span className="text-white/20">vs</span> <br className="md:hidden" /> PDF Tradicional
+            EPK Web <span className="text-white/20">vs</span> <br className="md:hidden" />PDF <span className="text-white/20">vs</span> Linktree
           </h2>
           <p className="mt-6 text-white/40 uppercase tracking-[0.3em] font-bold text-sm">
             La evolución digital del artista
           </p>
         </div>
 
-        {/* Comparison Grid */}
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-12">
+        {/* Comparison Grid — 3 columns */}
+        <div className="grid md:grid-cols-3 gap-4 lg:gap-6">
           {/* PDF Column */}
-          <div className="p-8 lg:p-12 border border-white/20 bg-white/5 rounded-[40px] transition-all duration-500">
-            <h3 className="text-xl lg:text-2xl font-black text-white/60 mb-10 uppercase tracking-widest border-b border-white/20 pb-6">
+          <div className="p-6 lg:p-10 border border-white/10 bg-white/[0.02] rounded-[32px]">
+            <h3 className="text-lg lg:text-xl font-black text-white/40 mb-8 uppercase tracking-widest border-b border-white/10 pb-4">
               PDF Tradicional
             </h3>
-            <ul className="space-y-6">
-              {pdfFeatures.map((feature, index) => (
-                <li key={index} className="flex items-center gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full border border-white/20 flex items-center justify-center">
-                    <X className="w-4 h-4 text-white/40" />
+            <ul className="space-y-5">
+              {comparisonRows.map((row, i) => (
+                <li key={i} className="flex items-center gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full border border-white/10 flex items-center justify-center">
+                    <X className="w-3 h-3 text-white/30" />
                   </div>
-                  <span className="text-white/60 text-lg font-medium leading-tight">{feature.main}</span>
+                  <span className="text-white/40 text-sm font-medium leading-tight">{row.label}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Web Column */}
-          <div className="p-8 lg:p-12 border border-white/20 bg-gradient-to-br from-white/10 to-transparent rounded-[40px] relative">
-            {/* Glow effect */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#daff00]/10 blur-[120px] rounded-full pointer-events-none" />
-            
-            <h3 className="text-xl lg:text-2xl font-black text-[#daff00] mb-10 uppercase tracking-widest border-b border-[#daff00]/20 pb-6">
-              EPK Web PRO
+          {/* Linktree Column */}
+          <div className="p-6 lg:p-10 border border-white/20 bg-white/[0.03] rounded-[32px]">
+            <h3 className="text-lg lg:text-xl font-black text-white/60 mb-8 uppercase tracking-widest border-b border-white/20 pb-4">
+              Linktree / Bio.site
             </h3>
-            <ul className="space-y-8 relative">
-              {webFeatures.map((feature, index) => (
-                <li key={index} className="flex items-center gap-4 group">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#daff00] flex items-center justify-center shadow-[0_0_20px_rgba(218,255,0,0.3)] transition-transform group-hover:scale-110">
-                    <Check className="w-4 h-4 text-black font-black" />
+            <ul className="space-y-5">
+              {comparisonRows.map((row, i) => (
+                <li key={i} className="flex items-center gap-3">
+                  <div className={`flex-shrink-0 w-6 h-6 rounded-full border flex items-center justify-center ${
+                    row.linktree === "partial" ? "border-yellow-500/40 bg-yellow-500/10" : "border-white/10"
+                  }`}>
+                    {row.linktree === "partial" ? (
+                      <span className="text-yellow-400 text-[9px] font-black">~</span>
+                    ) : (
+                      <X className="w-3 h-3 text-white/30" />
+                    )}
+                  </div>
+                  <span className="text-white/50 text-sm font-medium leading-tight">
+                    {row.label}
+                    {row.linktree === "partial" && row.linktreeNote && (
+                      <span className="text-yellow-400/60 text-[10px] ml-1">({row.linktreeNote})</span>
+                    )}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* EPK Web Column */}
+          <div className="p-6 lg:p-10 border border-[#daff00]/20 bg-gradient-to-br from-[#daff00]/5 to-transparent rounded-[32px] relative">
+            <div className="absolute top-0 right-0 w-48 h-48 bg-[#daff00]/10 blur-[100px] rounded-full pointer-events-none" />
+            <h3 className="text-lg lg:text-xl font-black text-[#daff00] mb-8 uppercase tracking-widest border-b border-[#daff00]/20 pb-4">
+              EPK Web Discos Eterna
+            </h3>
+            <ul className="space-y-5 relative">
+              {comparisonRows.map((row, i) => (
+                <li key={i} className="flex items-center gap-3 group">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#daff00] flex items-center justify-center shadow-[0_0_15px_rgba(218,255,0,0.3)] transition-transform group-hover:scale-110">
+                    <Check className="w-3 h-3 text-black" />
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-white text-lg lg:text-xl font-black uppercase tracking-tight leading-tight mb-1">
-                      {feature.main}
+                    <span className="text-white text-sm font-black uppercase tracking-tight leading-tight">
+                      {row.label}
                     </span>
-                    {feature.sub && (
-                      <span className="text-white/40 text-sm font-medium leading-tight">
-                        {feature.sub}
-                      </span>
+                    {row.epkNote && (
+                      <span className="text-white/30 text-[10px] font-medium">{row.epkNote}</span>
                     )}
                   </div>
                 </li>

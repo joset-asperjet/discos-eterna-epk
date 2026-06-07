@@ -396,12 +396,12 @@ export function HeroSection() {
           {/* Left Side: Content */}
           <div className="max-w-3xl text-left mx-0">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] text-white text-balance mb-8">
-              Un EPK todo en uno para tu proyecto artistico.
+              El press kit web para DJs y productores que quieren ser tomados en serio por agencias y sellos internacionales.
             </h1>
 
             <div className="max-w-2xl mb-8">
               <p className="text-lg md:text-xl lg:text-2xl text-white/70 font-medium leading-relaxed text-pretty">
-                Diseñado para que agencias y promotores conozcan tu propuesta de forma precisa y profesional.
+                Tu propio dominio. Tu música. Tu rider técnico. Tu historia. Todo en una página que un promotor europeo abre en 15 segundos y entiende quién eres en 30.
               </p>
             </div>
 
@@ -450,12 +450,10 @@ export function HeroSection() {
               </a>
 
               <a
-                href="https://juanitostate.info"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#ejemplos"
                 className="inline-flex items-center justify-center border-2 border-white/10 bg-transparent text-white px-10 py-4 text-sm font-semibold group rounded-full transition-all duration-300 w-full sm:w-auto hover:bg-white/5 hover:border-white/20 cursor-pointer"
               >
-                Ver ejemplo en vivo
+                Ver ejemplos en vivo
               </a>
             </div>
           </div>

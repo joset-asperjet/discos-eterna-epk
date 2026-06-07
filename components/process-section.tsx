@@ -1,50 +1,43 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Phone, CreditCard, FileText, Code2, RefreshCw, Rocket, Plus, ChevronDown, Sparkles } from "lucide-react"
+import { Phone, FileText, Code2, RefreshCw, Rocket, Sparkles } from "lucide-react"
 
 const steps = [
   {
     number: "01",
     icon: Phone,
-    title: "Agendas una llamada de 20 min",
-    description: "Conversamos sobre tus objetivos, revisamos tu material actual y definimos la mejor estrategia para tu EPK Web.",
+    title: "Diagnóstico estratégico (no demo de venta)",
+    description: "Llamada de 25 minutos donde escuchamos tu proyecto, no vendemos. Revisamos tu trayectoria, identificamos tu gap real, y te recomendamos qué hacer. Si tu proyecto no aplica, te lo decimos sin rodeos.",
     color: "bg-[#111111]",
   },
   {
     number: "02",
-    icon: CreditCard,
-    title: "Eliges tu plan y método de pago",
-    description: "Seleccionas el plan ideal. Aceptamos transferencia directa o pagos seguros vía Wompi (QR, Tarjeta, PSE).",
+    icon: FileText,
+    title: "Material curado por nosotros",
+    description: "No te pedimos 'mándanos todo'. Te decimos qué de lo que tienes ya sirve, qué hay que producir, y qué dejamos fuera. Curaduría real, no archivo masivo.",
     color: "bg-[#161616]",
   },
   {
     number: "03",
-    icon: FileText,
-    title: "Guía de materiales",
-    description: "Te enviamos una guía detallada para organizar tu biografía, fotos, videos y rider técnico. Todo en un solo lugar.",
+    icon: Code2,
+    title: "Construcción transparente",
+    description: "Recibes preview funcional desde el día 3. Comentas en vivo, ajustamos en tiempo real. Sin sorpresas en la entrega final.",
     color: "bg-[#1c1c1c]",
   },
   {
     number: "04",
-    icon: Code2,
-    title: "Desarrollo y Código",
-    description: "Construimos tu EPK Web con diseño mobile-first y optimización de velocidad para una carga instantánea.",
+    icon: Rocket,
+    title: "Lanzamiento estratégico",
+    description: "No publicamos 'cuando esté listo'. Coordinamos el lanzamiento con tu calendario de releases o eventos para máximo impacto.",
     color: "bg-[#222222]",
   },
   {
     number: "05",
     icon: RefreshCw,
-    title: "Rondas de revisión",
-    description: "Revisamos cada detalle juntos para asegurar que tu EPK refleje exactamente tu identidad artística.",
+    title: "Acompañamiento post-lanzamiento",
+    description: "30 días de soporte. Te enseñamos a usar el panel administrativo. Te asesoramos cómo presentar tu URL a sellos y promotores. Plan Artista Eterno y Combo.",
     color: "bg-[#282828]",
-  },
-  {
-    number: "06",
-    icon: Rocket,
-    title: "Lanzamiento",
-    description: "Publicamos tu EPK bajo tu dominio propio con certificado SSL. ¡Tu proyecto está listo para el mundo!",
-    color: "bg-[#2e2e2e]",
   },
 ]
 
