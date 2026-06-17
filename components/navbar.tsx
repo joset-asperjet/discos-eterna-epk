@@ -5,6 +5,8 @@ import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
+import { AcademyModal } from "@/components/academy-modal"
+import { DemoModal } from "@/components/demo-modal"
 
 export function Navbar() {
   const [spinCount, setSpinCount] = useState(0)
@@ -16,12 +18,6 @@ export function Navbar() {
     }, 10000)
     return () => clearInterval(interval)
   }, [])
-
-  const navLinks = [
-    { label: 'Comparativa', href: '#comparativa' },
-    { label: 'Planes', href: '#planes' },
-    { label: 'Proceso', href: '#proceso' }
-  ]
 
   return (
     <nav className="absolute top-0 left-0 right-0 z-50 pointer-events-none">
@@ -44,25 +40,36 @@ export function Navbar() {
 
             {/* Nav Items - Centered */}
             <div className="flex items-center gap-12">
-              {navLinks.map((item) => (
-                <Link 
-                  key={item.href}
-                  href={item.href} 
-                  className="text-xs lg:text-sm font-black tracking-widest uppercase text-white/50 hover:text-white transition-colors whitespace-nowrap cursor-pointer"
-                >
-                  {item.label}
-                </Link>
-              ))}
+              <Link 
+                href="/digitalpresskits" 
+                className="text-xs lg:text-sm font-black tracking-widest uppercase text-white/50 hover:text-white transition-colors whitespace-nowrap cursor-pointer"
+              >
+                Presskits
+              </Link>
+
+              <AcademyModal>
+                <button className="text-xs lg:text-sm font-black tracking-widest uppercase text-white/50 hover:text-[#daff00] transition-colors whitespace-nowrap cursor-pointer">
+                  Eterna Academy
+                </button>
+              </AcademyModal>
+
+              <Link 
+                href="/label" 
+                className="text-xs lg:text-sm font-black tracking-widest uppercase text-white/50 hover:text-white transition-colors whitespace-nowrap cursor-pointer"
+              >
+                Label
+              </Link>
             </div>
 
             {/* CTA Button */}
-            <Button 
-              asChild 
-              size="lg" 
-              className="bg-[#daff00] hover:bg-[#daff00]/90 text-black text-xs uppercase tracking-widest px-10 h-12 lg:h-14 rounded-full shrink-0 transition-transform hover:scale-105 active:scale-95 font-black"
-            >
-              <Link href="#planes">Contratar</Link>
-            </Button>
+            <DemoModal>
+              <Button 
+                size="lg" 
+                className="bg-[#daff00] hover:bg-[#daff00]/90 text-black text-xs uppercase tracking-widest px-10 h-12 lg:h-14 rounded-full shrink-0 transition-transform hover:scale-105 active:scale-95 font-black"
+              >
+                Enviar Demo
+              </Button>
+            </DemoModal>
           </div>
         </div>
 
@@ -93,31 +100,44 @@ export function Navbar() {
         }`}>
           <div className="flex flex-col items-center justify-center h-full gap-8 px-6">
             <div className="flex flex-col items-center gap-6 w-full">
-              {navLinks.map((item, i) => (
-                <Link 
-                  key={item.href}
-                  href={item.href} 
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`text-2xl font-black tracking-widest uppercase text-white/50 hover:text-[#daff00] transition-all transform ${
-                    isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
-                  }`}
-                  style={{ transitionDelay: `${i * 100}ms` }}
+              <Link 
+                href="/digitalpresskits" 
+                onClick={() => setIsMenuOpen(false)}
+                className={`text-2xl font-black tracking-widest uppercase text-white/50 hover:text-[#daff00] transition-all transform ${isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
+                style={{ transitionDelay: `0ms` }}
+              >
+                Presskits
+              </Link>
+
+              <AcademyModal>
+                <button className={`text-2xl font-black tracking-widest uppercase text-white/50 hover:text-[#daff00] transition-all transform ${isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
+                  style={{ transitionDelay: `100ms` }}
                 >
-                  {item.label}
-                </Link>
-              ))}
+                  Eterna Academy
+                </button>
+              </AcademyModal>
+
+              <Link 
+                href="/label" 
+                onClick={() => setIsMenuOpen(false)}
+                className={`text-2xl font-black tracking-widest uppercase text-white/50 hover:text-[#daff00] transition-all transform ${isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
+                style={{ transitionDelay: `200ms` }}
+              >
+                Label
+              </Link>
             </div>
             
             <div className="w-full h-px bg-white/10 max-w-[200px]" />
             
-            <Button 
-              asChild 
-              size="lg" 
-              onClick={() => setIsMenuOpen(false)}
-              className="bg-[#daff00] text-black w-full max-w-[280px] h-16 rounded-2xl text-sm font-black uppercase tracking-widest shadow-[0_0_30px_rgba(218,255,0,0.2)]"
-            >
-              <Link href="#planes">Contratar Ahora</Link>
-            </Button>
+            <DemoModal>
+              <Button 
+                size="lg" 
+                onClick={() => setIsMenuOpen(false)}
+                className="bg-[#daff00] text-black w-full max-w-[280px] h-16 rounded-2xl text-sm font-black uppercase tracking-widest shadow-[0_0_30px_rgba(218,255,0,0.2)]"
+              >
+                Enviar Demo
+              </Button>
+            </DemoModal>
           </div>
         </div>
       </div>
