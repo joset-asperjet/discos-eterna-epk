@@ -8,16 +8,16 @@ const plans = [
   {
     id: "combo",
     name: "COMBO Eterno + EPK",
-    price: "$3.500.000 COP",
-    priceUsd: "≈ USD $950 al cambio actual",
-    installments: "o 3 cuotas de $1.166.667 con Wompi",
+    price: "Presupuesto a definir",
+    priceUsd: "Hablemos y armamos una propuesta a tu medida",
+    installments: "",
     subtitle: "Para artistas que quieren acompañamiento estratégico completo.",
     features: [
-      "Todo lo del Plan Artista Eterno",
-      "Optimización de perfiles: Instagram, Spotify, Beatport, SoundCloud",
+      "Todo lo incluido en Artist Pro",
+      "EPK profesional con dominio y correo corporativo",
       "Estrategia de lanzamiento para 1 EP o Single",
       "Sesiones de consultoría 1:1 + acceso a red de contactos del sello",
-      "Auditoría de identidad visual + clases de DJing y mezcla",
+      "Auditoría de identidad visual + optimización de perfiles digitales",
     ],
     renewal: "",
     featured: false,
@@ -28,13 +28,13 @@ const plans = [
   },
   {
     id: "eterno",
-    name: "Artista Eterno",
+    name: "Artist Pro",
     price: "$1.200.000 COP",
     priceUsd: "≈ USD $550 al cambio actual",
-    installments: "o 3 cuotas de $666.667 con Wompi",
+    installments: "o 3 cuotas de $400.000 con Wompi",
     subtitle: "Para artistas listos para entrar al circuito internacional.",
     features: [
-      "Todo lo del plan Hobby Artist",
+      "Todo lo incluido en Artist Starter",
       "Mapas de calor: ve qué partes de tu EPK más interesan a promotores",
       "Panel administrativo para actualizar tu EPK sin depender de nosotros",
       "Mayor personalización visual + 3 rondas de revisión",
@@ -43,17 +43,17 @@ const plans = [
     renewal: "Tu hosting y dominio están incluidos el primer año. Renovación anual desde $250K.",
     featured: true,
     premium: false,
-    ctaText: "Quiero Artista Eterno",
-    ctaHref: "https://wa.me/573107783559?text=Hola!%20Vengo%20de%20la%20p%C3%A1gina%20de%20Discos%20Eterna.%20Me%20interesa%20el%20plan%20Artista%20Eterno.%20%C2%BFPodemos%20agendar%20la%20llamada%20de%20diagn%C3%B3stico%3F",
+    ctaText: "Quiero Artist Pro",
+    ctaHref: "https://wa.me/573107783559?text=Hola!%20Vengo%20de%20la%20p%C3%A1gina%20de%20Discos%20Eterna.%20Me%20interesa%20el%20plan%20Artist%20Pro.%20%C2%BFPodemos%20agendar%20la%20llamada%20de%20diagn%C3%B3stico%3F",
     ctaType: "whatsapp",
   },
   {
     id: "hobby",
-    name: "Hobby Artist",
+    name: "Artist Starter",
     price: "$1.000.000 COP",
     priceUsd: "≈ USD $400 al cambio actual",
-    installments: "o 3 cuotas de $500.000 con Wompi",
-    subtitle: "Para artistas construyendo presencia digital.",
+    installments: "o 3 cuotas de $333.333 con Wompi",
+    subtitle: "Para artistas que están construyendo su presencia digital.",
     features: [
       "Tu dominio propio + correo corporativo @tudominio.com",
       "Diseño profesional mobile-first",
@@ -64,8 +64,8 @@ const plans = [
     renewal: "Tu hosting y dominio están incluidos el primer año. Renovación anual desde $200K.",
     featured: false,
     premium: false,
-    ctaText: "Empezar con Hobby Artist",
-    ctaHref: "https://wa.me/573107783559?text=Hola!%20Vengo%20de%20la%20p%C3%A1gina%20de%20Discos%20Eterna.%20Me%20interesa%20el%20plan%20Hobby%20Artist.%20Cu%C3%A9ntame%20c%C3%B3mo%20arrancamos.",
+    ctaText: "Empezar con Artist Starter",
+    ctaHref: "https://wa.me/573107783559?text=Hola!%20Vengo%20de%20la%20p%C3%A1gina%20de%20Discos%20Eterna.%20Me%20interesa%20el%20plan%20Artist%20Starter.%20Cu%C3%A9ntame%20c%C3%B3mo%20arrancamos.",
     ctaType: "whatsapp",
   },
 ]
@@ -165,7 +165,7 @@ export function PricingSection() {
 
               {/* Price */}
               <div className="mb-2">
-                <span className={`text-2xl md:text-3xl font-black ${plan.premium ? "text-white/90" : "text-white"}`}>
+                <span className={`text-2xl md:text-3xl font-black ${plan.premium ? "text-[#8B5CF6]" : "text-white"}`}>
                   {plan.price}
                 </span>
               </div>
@@ -174,12 +174,15 @@ export function PricingSection() {
               <span className="text-white/30 text-[10px] font-medium mb-1 block">{plan.priceUsd}</span>
 
               {/* Installments */}
-              <div className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] font-black mb-6 ${plan.featured ? "bg-[#daff00]/10 text-[#daff00] border border-[#daff00]/20" :
-                plan.premium ? "bg-[#8B5CF6]/10 text-[#8B5CF6] border border-[#8B5CF6]/20" :
-                  "bg-white/5 text-white/40 border border-white/10"
-                }`}>
-                {plan.installments}
-              </div>
+              {plan.installments && (
+                <div className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] font-black mb-6 ${plan.featured ? "bg-[#daff00]/10 text-[#daff00] border border-[#daff00]/20" :
+                  plan.premium ? "bg-[#8B5CF6]/10 text-[#8B5CF6] border border-[#8B5CF6]/20" :
+                    "bg-white/5 text-white/40 border border-white/10"
+                  }`}>
+                  {plan.installments}
+                </div>
+              )}
+              {!plan.installments && <div className="mb-6" />}
 
               {/* Features List */}
               <ul className="space-y-3 mb-6 flex-1">
